@@ -27,8 +27,25 @@ class Nacionalidad(models.Model):
 
     
     class Meta:
-        verbose_name_plural = "Nacionalidad"
+        verbose_name_plural = "Nacionalidades"
         ordering = ['nacionalidad']
+
+
+
+class Marca(models.Model):
+
+    marca = models.CharField(max_length=150, verbose_name='Marca Producto',unique=True,
+                blank=False, null=False)
+    
+
+    def __str__(self):
+        return '{}'.format(self.marca)
+
+    
+    class Meta:
+        verbose_name_plural = "Marcas"
+        ordering = ['marca']
+
 
 
 
@@ -40,6 +57,7 @@ class Producto(models.Model):
                     verbose_name='Precio Unitario')
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE,verbose_name='Categoria Producto')
     id_nacionalidad = models.ForeignKey(Nacionalidad, on_delete=models.CASCADE,verbose_name='Nacionalidad Producto')
+    id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE,verbose_name='Marca Producto')
    
     
 
@@ -49,4 +67,4 @@ class Producto(models.Model):
 
     class Meta:
         verbose_name_plural = 'Productos'
-        ordering = ['nombre_producto']
+        ordering = ['nombre_producto'] 
