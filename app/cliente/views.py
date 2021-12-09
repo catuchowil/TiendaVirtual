@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+# Vista de Nuevo Producto.
+def NuevoCliente(request):
+    return render(request, 'cliente/nuevo_cliente.html')
