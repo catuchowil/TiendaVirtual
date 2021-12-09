@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+# Vista de Nuevo Proveedor.
+def NuevoProveedor(request):
+    return render(request, 'proveedor/nuevo_proveedor.html')
