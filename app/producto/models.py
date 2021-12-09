@@ -62,7 +62,7 @@ class Producto(models.Model):
     
 
     def __str__(self):
-        return '{}{}{}'.format(self.codigo_producto,self.nombre_producto,self.id_categoria)
+        return 'Nombre del Producto: {}'.format(self.nombre_producto)
     
 
     class Meta:
