@@ -1,1 +1,23 @@
-<h1>Nuevo Producto</h1>
+{% extends 'base/base.html' %}
+
+{%block titulo-miga%}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Página de Productos</h4>
+            <div>
+
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="{% url 'base:index' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Cargar Nuevo Porducto</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block contenido %}
+
+{% endblock %}
