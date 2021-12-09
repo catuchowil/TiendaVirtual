@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     #--Aplicaciones propias
     'app.base',
     'app.producto',
-    'app.cliente'
+    'app.cliente',
+    'app.vendedor'
 ]
 
 MIDDLEWARE = [

@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(('app.base.urls','base'),namespace='base')),
     path('producto/',include(('app.producto.urls','producto'),namespace='producto')),
-    path('cliente/',include(('app.cliente.urls','cliente'),namespace='cliente'))
+    path('cliente/',include(('app.cliente.urls','cliente'),namespace='cliente')),
+    path('vendedor/',include(('app.vendedor.urls','vendedor'),namespace='vendedor'))
 ]
