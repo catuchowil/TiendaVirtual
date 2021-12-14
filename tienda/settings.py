@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'app.producto',
     'app.cliente',
     'app.vendedor',
-    'app.proveedor'
+    'app.proveedor',
+    #--Aplicaciones de terceros
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [

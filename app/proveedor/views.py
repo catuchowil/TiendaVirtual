@@ -1,10 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import Proveedor
+from .forms import ProveedorForm
 
 # Vista de Nuevo Proveedor.
 def NuevoProveedor(request):
-    return render(request, 'proveedor/nuevo_proveedor.html')
+
+    if request.method == 'POST':
+        formulario_proveedor= ProveedorForm(request.POST)
+        if formulario_proveedor.is_valid():
+            formulario_proveedor.save()
+            return redirect('proveedor:listadoproveedor')
+    else:
+        formulario_proveedor = ProveedorForm()
+    
+    return render(request, 'proveedor/nuevo_proveedor.html',{'form':formulario_proveedor})
+
+    
 
 
 

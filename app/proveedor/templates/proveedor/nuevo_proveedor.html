@@ -1,4 +1,5 @@
 {% extends 'base/base.html' %}
+{% load widget_tweaks %}
 
 {%block titulo-miga%}
 <div class="row">
@@ -19,5 +20,66 @@
 {% endblock%}
 
 {% block contenido %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Formulario de Carga de Proveedores</h4>
+               <hr>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="inputEmail4" class="form-label">Código</label>
+                            {% render_field form.codigo_proveedor class="form-control" %}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="inputPassword4" class="form-label">Nombre</label>
+                            {% render_field form.nombre_proveedor class="form-control" %}
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputAddress" class="form-label">Domicilio</label>
+                            {% render_field form.domicilio_proveedor class="form-control" %}
+                        </div>
+                    </div>
 
+                    
+
+                    <div class="row">
+                        <div class="mb-3 col-md-2">
+                            <label for="inputCity" class="form-label">Tel Fijo</label>
+                            {% render_field form.telfijo_proveedor class="form-control" %}
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputState" class="form-label">Tel Movil</label>
+                            {% render_field form.movil_proveedor class="form-control" %}
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="inputZip" class="form-label">Email</label>
+                            {% render_field form.email_proveedor class="form-control" %}
+                        </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="inputCity" class="form-label">Código Postal</label>
+                            {% render_field form.zipcode_proveedor class="form-control" %}
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="inputState" class="form-label">País</label>
+                            {% render_field form.id_pais class="form-control" %}
+                        </div>
+                       
+                        
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Cargar Registro</button>
+
+                </form>
+
+            </div> 
+    </div> 
+</div>
+</div>
 {% endblock %}

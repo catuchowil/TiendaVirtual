@@ -1,4 +1,5 @@
 {% extends 'base/base.html' %}
+{% load widget_tweaks %}
 
 {%block titulo-miga%}
 <div class="row">
@@ -19,5 +20,55 @@
 {% endblock%}
 
 {% block contenido %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Formulario de Carga de Vendedor</h4>
+               <hr>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="inputEmail4" class="form-label">Apellido</label>
+                            {% render_field form.apellido_vendedor class="form-control" %}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="inputPassword4" class="form-label">Nombre</label>
+                            {% render_field form.nombre_vendedor class="form-control" %}
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputAddress" class="form-label">Domicilio</label>
+                            {% render_field form.domicilio_vendedor class="form-control" %}
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="inputCity" class="form-label">DNI</label>
+                            {% render_field form.dni_vendedor class="form-control" %}
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputState" class="form-label">Código</label>
+                            {% render_field form.codigo_vendedor class="form-control" %}
+                        </div>
+                        <div class="mb-3 col-md-2">
+                            <label for="inputZip" class="form-label">Sucursal</label>
+                            {% render_field form.sucursal class="form-control" %}
+                        </div>
+                       
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Cargar Registro</button>
+
+                </form>
+
+            </div> 
+    </div> 
+</div>
+</div>
 
 {% endblock %}
