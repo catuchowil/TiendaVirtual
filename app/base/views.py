@@ -4,3 +4,7 @@ from django.shortcuts import render
 def Home(request):
     return render(request, 'base/home.html')
 
+
+# Vista de Acercade
+def Acercade(request):
+    return render(request, 'base/acercade.html')

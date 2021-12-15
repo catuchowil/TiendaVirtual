@@ -1,0 +1,142 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{%block titulo-miga%}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Aceca de</h4>
+            <div>
+
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="{% url 'base:index' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Acerca de</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+
+{% block contenido %}
+<div class="row">
+    <div class="col-12">
+        <div class="card text-center">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8">
+                        <h2 class="mb-3">Proyecto : TIENDA VIRTUAL CODEFOX</h2>
+                        <h4>Descripción</h4>
+                        <p class="text-muted">
+                            Codefox es un sistema de administración de una tienda virtual de equipos de tecnología
+                             de diferentes orígenes (país de fabricación) y marcas.
+                            El sistema permite administrar todos los productos, clientes, vendedores y proveedores.
+                            Contando para ello formularios de acceso de los datos, consultas y listados de los ítems mencionados.
+                        </p>
+                        <h4>Especificación de Desarrollo</h4>
+                        <p class="text-muted">
+                            Para la construcción del proyecto genero cuatro aplicaciones dentro de un directorio al que llamo app, cada aplicación cuenta con su propia template, vistas, forms, urls, etc.
+                            A nivel general utilizo una template y las demás template de cada aplicación hacen uso de la herencia de esta.
+                            Para que los formularios de carga de datos, puedan obtener los estilos que la template trae, utilizo una herramienta externa la cual instale por medio del gestor de paquetes pip y que se llama "widget_tweaks" (busqué documentación en internet para la implementación de la misma y es muy sencilla de instalar y utilizar).
+                            Así mismo para la confección de modelos utilizo el tipo de campo choice, email, decimal y la relación entre tablas uno a muchos.
+                            Nuevamente reitero que me guié de la documentación oficial de django y de otra documentación encontrada en internet. 
+                        </p>
+                        <h4>Funcionalidades</h4>
+                        <p class="text-muted">
+                            El sistema cuenta con un menú Crear Nuevo donde se puede llamar al formulario de carga de cualquiera de las aplicaciones mencionadas.
+                            Así mismo cuenta con un menú horizontal (que se puede acceder desde cualquiera de las páginas que se visite) donde se puede acceder a los listados generales y formulario de búsqueda (no realizado aún ya que no se pide en esta entrega) de productos, clientes, vendedores, y proveedores.
+                            El menú cuenta con un acceso "Web Tienda" que no tiene funcionamiento aún, pero este acceso debería llevarnos a la página oficial de la tienda (tarea a realizar)
+                            El ítem Inicio del menú principal nos lleva a la página Home del sistema de administración la cual cuenta con un carrusel y el acceso en pié de página de Acerca de...
+                        </p>
+                        <br>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-3 col-md-6">
+        <div class="card text-center">
+            <div class="card-body">
+                <div class=" bg-soft-primary border border-primary avatar-lg mb-3 rounded-circle mx-auto">
+                    <i class="dripicons-broadcast avatar-title text-primary h2 m-0"></i>
+                </div>
+                <h4 class="mb-3">Clientes</h4>
+
+                <p class="text-muted mx-2">We put a lot of effort in design, as it’s the most important ingredient of successful website utperspiciatis type book.</p>
+                <a href="#" class="text-dark">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card text-center">
+            <div class="card-body">
+                <div class=" bg-soft-pink border border-pink avatar-lg mb-3 rounded-circle mx-auto">
+                    <i class="dripicons-help avatar-title text-pink h2 m-0"></i>
+                </div>
+                <h4 class="mb-3">Vendedores</h4>
+
+                <p class="text-muted mx-2">We put a lot of effort in design, as it’s the most important ingredient of successful website utperspiciatis type book.</p>
+                <a href="#" class="text-dark">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card text-center">
+            <div class="card-body">
+                <div class=" bg-soft-success border border-success avatar-lg mb-3 rounded-circle mx-auto">
+                    <i class="dripicons-brightness-medium avatar-title text-success h2 m-0"></i>
+                </div>
+                <h4 class="mb-3">Productos</h4>
+
+                <p class="text-muted mx-2">We put a lot of effort in design, as it’s the most important ingredient of successful website utperspiciatis type book.</p>
+                <a href="#" class="text-dark">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card text-center">
+            <div class="card-body">
+                <div class=" bg-soft-purple border border-purple avatar-lg mb-3 rounded-circle mx-auto">
+                    <i class="dripicons-clock avatar-title text-purple h2 m-0"></i>
+                </div>
+                <h4 class="mb-3">Proveedores</h4>
+
+                <p class="text-muted mx-2">We put a lot of effort in design, as it’s the most important ingredient of successful website utperspiciatis type book.</p>
+                <a href="#" class="text-dark">Read More</a>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h4 class="text-dark fw-semibold text-uppercase mb-3">Desarrollado por...</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <img src="{% static 'base_sistema/assets/images/users/f1.jpg'%}" alt="team-member" class="avatar-lg d-block img-thumbnail rounded-circle">
+                    <div class="w-100 ms-3">
+                        <h4 class="mt-0">Guillermo Ariel Puentes</h4>
+                        <p class="mb-0">Desarrollador</p>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+{% endblock %}
