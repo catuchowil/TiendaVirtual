@@ -14,11 +14,18 @@ class NuevoCliente(generic.CreateView):
     form_class = ClienteForm
     success_url = reverse_lazy('cliente:listadocliente')
 
+
 class ListadoCliente(generic.ListView):
     model = Cliente
     template_name = 'cliente/listado_cliente.html'
     context_object_name = 'cli'
-    
+
+
+class DetalleCliente(generic.DetailView):
+    model = Cliente
+    template_name = 'cliente/detalle_cliente.html'
+    context_object_name = 'cli'
+
 
 """
 VISTAS BASADAS EN FUNCIONES

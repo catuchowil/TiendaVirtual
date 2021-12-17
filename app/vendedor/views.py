@@ -21,6 +21,14 @@ class ListadoVendedor(generic.ListView):
     template_name = 'vendedor/listado_vendedor.html'
     context_object_name = 'vend'
 
+
+class DetalleVendedor(generic.DetailView):
+    model = Vendedor
+    template_name = 'vendedor/detalle_vendedor.html'
+    context_object_name = 'vend'
+
+
+
 """
 VISTAS BASADAS EN FUNCION
 

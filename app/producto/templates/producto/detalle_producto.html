@@ -1,0 +1,77 @@
+{% extends 'base/base.html' %}
+
+
+{%block titulo-miga%}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Página de Productos</h4>
+            <div>
+
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="{% url 'base:index' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Detalle del producto</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block contenido %}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Detalles del Producto</h4>
+               <hr>
+
+                <form>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="inputEmail4" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" value="{{produ.nombre_producto}}" >
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputPassword4" class="form-label">Código</label>
+                            <input type="text" class="form-control" value="{{produ.codigo_producto}}" >
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputState" class="form-label">Marca</label>
+                            <input type="text" class="form-control" value="{{produ.id_marca}}">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputAddress" class="form-label">Descripción</label>
+                       
+                        <textarea class="form-control"  id="example-textarea" rows="5">{{produ.descripcion_producto}}</textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="inputCity" class="form-label">Precio Unitario</label>
+                            <input type="text" class="form-control" value="$ {{produ.precio_unitario}}">
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputState" class="form-label">Categoría</label>
+                            <input type="text" class="form-control" value="{{produ.id_categoria}}">
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputState" class="form-label">Nacionalidad</label>
+                            <input type="text" class="form-control" value="{{produ.id_nacionalidad}}">
+                        </div>
+                        
+                    </div>
+
+                   
+                </form>
+                <button onclick="history.go(-1)" class="btn btn-success waves-effect waves-light">Regresar</button>
+            </div> <!-- end card-body -->
+        </div> <!-- end card-->
+    </div> <!-- end col -->
+</div>
+{% endblock %}

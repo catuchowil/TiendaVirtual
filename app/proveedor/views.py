@@ -21,6 +21,12 @@ class ListadoProveedor(generic.ListView):
     context_object_name = 'provee'
 
 
+class DetalleProveedor(generic.DetailView):
+    model = Proveedor
+    template_name = 'proveedor/detalle_proveedor.html'
+    context_object_name = 'provee'
+
+
 """
 # Vista de Nuevo Proveedor.
 def NuevoProveedor(request):

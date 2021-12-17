@@ -34,6 +34,7 @@
                                 <th>Nombre</th>
                                 <th>DNI</th>
                                 <th>Código Vendedor</th>
+                                <th>Sucursal</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -44,8 +45,11 @@
                                 <td>{{i.nombre_vendedor}}</td>
                                 <td>{{i.dni_vendedor}}</td>
                                 <td>{{i.codigo_vendedor}}</td>
+                                <td>{{i.sucursal}}</td>
                               
-                                <td><button type="button" class="btn btn-soft-info btn-rounded waves-effect waves-light">Más Info</button></td>
+                                <td><a href="{%url 'vendedor:detallevendedor' i.id%}" class="btn btn-soft-info btn-rounded waves-effect waves-light">Más Info</a>
+                                    <a href="{%url 'vendedor:detallevendedor' i.id%}" class="btn btn-soft-warning btn-rounded waves-effect waves-light">Editar</a>
+                                    <a href="{%url 'vendedor:detallevendedor' i.id%}" class="btn btn-soft-danger btn-rounded waves-effect waves-light">Eliminar</a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
