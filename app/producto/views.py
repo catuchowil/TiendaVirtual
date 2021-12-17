@@ -1,7 +1,31 @@
 from django.shortcuts import render, redirect
-from .models import Producto
 
+
+from django.urls import reverse_lazy
+from django.views import generic
+
+
+from .models import Producto
 from .forms import ProductoForm
+
+# Vistas Basadas en Clase
+
+class NuevoProducto(generic.CreateView):
+    model = Producto
+    template_name = 'producto/nuevo_producto.html'
+    form_class = ProductoForm
+    contex_object_name = 'form'
+    success_url = reverse_lazy('producto:listadoproducto')
+
+
+class ListadoProducto(generic.ListView):
+    model = Producto
+    template_name = 'producto/listado_producto.html'
+    context_object_name = 'produ'
+   
+
+"""
+#Vistas Basadas en Función
 
 # Vista de Nuevo Producto.
 def NuevoProducto(request):
@@ -22,4 +46,5 @@ def NuevoProducto(request):
 # Vista Listado Producto
 def ListadoProducto(request):
     producto = Producto.objects.all() # Trae todos los registros de la tabla producto
-    return render(request, 'producto/listado_producto.html',{'prod':producto})
+    return render(request, 'producto/listado_producto.html',{'produ':producto})
+"""
