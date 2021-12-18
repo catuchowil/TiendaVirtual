@@ -28,6 +28,19 @@ class DetalleProducto(generic.DetailView):
     model = Producto
     template_name = 'producto/detalle_producto.html'
     context_object_name = 'produ'
+
+
+class BuscarProducto(generic.ListView):
+    template_name = 'producto/buscar_producto.html'
+    context_object_name = 'produ'
+    
+    def get_queryset(self):
+        palabra_clave = self.request.GET.get("kword")
+        if not palabra_clave:
+            palabra_clave = "None"
+        return Producto.objects.filter(nombre_producto__icontains=palabra_clave)
+
+
    
 
 """
