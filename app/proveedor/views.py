@@ -27,6 +27,17 @@ class DetalleProveedor(generic.DetailView):
     context_object_name = 'provee'
 
 
+class BuscarProveedor(generic.ListView):
+    template_name = 'proveedor/buscar_proveedor.html'
+    context_object_name = 'provee'
+    
+    def get_queryset(self):
+        palabra_clave = self.request.GET.get("kword")
+        if not palabra_clave:
+            palabra_clave = "None"
+        return Proveedor.objects.filter(nombre_proveedor__icontains=palabra_clave)
+
+
 """
 # Vista de Nuevo Proveedor.
 def NuevoProveedor(request):
