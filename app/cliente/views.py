@@ -27,6 +27,17 @@ class DetalleCliente(generic.DetailView):
     context_object_name = 'cli'
 
 
+class BuscarCliente(generic.ListView):
+    template_name = 'cliente/buscar_cliente.html'
+    context_object_name = 'cli'
+    
+    def get_queryset(self):
+        palabra_clave = self.request.GET.get("kword")
+        if not palabra_clave:
+            palabra_clave = "None"
+        return Cliente.objects.filter(apellido_cliente__icontains=palabra_clave)
+
+
 """
 VISTAS BASADAS EN FUNCIONES
 
