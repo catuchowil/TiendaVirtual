@@ -28,6 +28,17 @@ class DetalleVendedor(generic.DetailView):
     context_object_name = 'vend'
 
 
+class BuscarVendedor(generic.ListView):
+    template_name = 'vendedor/buscar_vendedor.html'
+    context_object_name = 'vend'
+    
+    def get_queryset(self):
+        palabra_clave = self.request.GET.get("kword")
+        if not palabra_clave:
+            palabra_clave = "None"
+        return Vendedor.objects.filter(apellido_vendedor__icontains=palabra_clave)
+
+
 
 """
 VISTAS BASADAS EN FUNCION
