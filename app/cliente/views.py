@@ -38,6 +38,25 @@ class BuscarCliente(generic.ListView):
         return Cliente.objects.filter(apellido_cliente__icontains=palabra_clave)
 
 
+
+class EditarCliente(generic.UpdateView):
+    model = Cliente
+    template_name = 'cliente/editar_cliente.html'
+    context_object_name = 'obj'
+    form_class = ClienteForm
+    success_url = reverse_lazy('cliente:listadocliente')
+
+
+
+class EliminarCliente(generic.DeleteView):
+    model = Cliente
+    template_name = 'cliente/eliminar_cliente.html'
+    
+  
+    success_url = reverse_lazy('cliente:listadocliente')
+
+
+
 """
 VISTAS BASADAS EN FUNCIONES
 

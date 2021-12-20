@@ -46,8 +46,8 @@
                                 <td>{{i.dni_cliente}}</td>
                                 <td>{{i.domicilio_cliente}}</td>
                                 <td><a href="{% url 'cliente:detallecliente' i.id %}"" class="btn btn-soft-info btn-rounded waves-effect waves-light">Más Info</a>
-                                <a href="{% url 'cliente:detallecliente' i.id %}"" class="btn btn-soft-warning btn-rounded waves-effect waves-light">Editar</a>
-                                <a href="{% url 'cliente:detallecliente' i.id %}"" class="btn btn-soft-danger btn-rounded waves-effect waves-light">Eliminar</a></td>
+                                <a href="{% url 'cliente:editarcliente' i.id %}"" class="btn btn-soft-warning btn-rounded waves-effect waves-light">Editar</a>
+                                <a href="{% url 'cliente:eliminarcliente' i.id %}"" class="btn btn-soft-danger btn-rounded waves-effect waves-light">Eliminar</a></td>
                             </tr>
                             {% endfor %}
                         </tbody>

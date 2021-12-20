@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+{% load widget_tweaks %}
+
+{%block titulo-miga%}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Página de Clientes</h4>
+            <div>
+
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="{% url 'base:index' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Eliminar Cliente</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block contenido %}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Eliminar Cliente</h4>
+               <hr>
+               <div class="alert alert-danger bg-danger text-white border-0" role="alert">
+                Esta seguro de  <strong>ELIMINAR</strong> este cliente...???
+                <br>
+                <br>
+                Apellido: <strong> {{object.apellido_cliente}}, {{object.nombre_cliente}}</strong>
+                <br>
+                <br>
+                DNI: <strong>{{object.dni_cliente}}</strong> 
+                </div>
+                <hr>
+                <form method="POST">
+                    {% csrf_token %}
+                   
+                    <button type="submit" class="btn btn-warning waves-effect waves-light">Eliminar Cliente</button>
+                    <button onClick="history.go(-1);" class="btn btn-success waves-effect waves-light">Cancelar</button>
+                </form>
+
+            </div> 
+    </div> 
+</div>
+</div>
+{% endblock %}
