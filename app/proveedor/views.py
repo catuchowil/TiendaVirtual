@@ -38,6 +38,21 @@ class BuscarProveedor(generic.ListView):
         return Proveedor.objects.filter(nombre_proveedor__icontains=palabra_clave)
 
 
+class EditarProveedor(generic.UpdateView):
+    model = Proveedor
+    template_name = 'proveedor/editar_proveedor.html'
+    context_object_name = 'obj'
+    form_class = ProveedorForm
+    success_url = reverse_lazy('proveedor:listadoproveedor')
+
+
+
+class EliminarProveedor(generic.DeleteView):
+    model = Proveedor
+    template_name = 'proveedor/eliminar_proveedor.html'
+    success_url = reverse_lazy('proveedor:listadoproveedor')
+
+
 """
 # Vista de Nuevo Proveedor.
 def NuevoProveedor(request):

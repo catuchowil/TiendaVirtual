@@ -51,8 +51,6 @@ class EditarCliente(generic.UpdateView):
 class EliminarCliente(generic.DeleteView):
     model = Cliente
     template_name = 'cliente/eliminar_cliente.html'
-    
-  
     success_url = reverse_lazy('cliente:listadocliente')
 
 

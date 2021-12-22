@@ -47,8 +47,8 @@
                               
                                 <td>
                                     <a href="{%url 'producto:detalleproducto' i.id%}" class="btn btn-soft-info btn-rounded waves-effect waves-light">Más Info</a>
-                                    <a href="{%url 'vendedor:detallevendedor' i.id%}" class="btn btn-soft-warning btn-rounded waves-effect waves-light">Editar</a>
-                                    <a href="{%url 'vendedor:detallevendedor' i.id%}" class="btn btn-soft-danger btn-rounded waves-effect waves-light">Eliminar</a>
+                                    <a href="{%url 'producto:editarproducto' i.id%}" class="btn btn-soft-warning btn-rounded waves-effect waves-light">Editar</a>
+                                    <a href="{%url 'producto:eliminarproducto' i.id%}" class="btn btn-soft-danger btn-rounded waves-effect waves-light">Eliminar</a>
                                 </td>
                             </tr>
                             {% endfor %}

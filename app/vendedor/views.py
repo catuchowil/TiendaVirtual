@@ -40,6 +40,22 @@ class BuscarVendedor(generic.ListView):
 
 
 
+class EditarVendedor(generic.UpdateView):
+    model = Vendedor
+    template_name = 'vendedor/editar_vendedor.html'
+    context_object_name = 'obj'
+    form_class = VendedorForm
+    success_url = reverse_lazy('vendedor:listadovendedor')
+
+
+
+class EliminarVendedor(generic.DeleteView):
+    model = Vendedor
+    template_name = 'vendedor/eliminar_vendedor.html'
+    success_url = reverse_lazy('vendedor:listadovendedor')
+
+
+
 """
 VISTAS BASADAS EN FUNCION
 

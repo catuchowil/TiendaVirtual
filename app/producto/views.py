@@ -41,6 +41,22 @@ class BuscarProducto(generic.ListView):
         return Producto.objects.filter(nombre_producto__icontains=palabra_clave)
 
 
+
+class EditarProducto(generic.UpdateView):
+    model = Producto
+    template_name = 'producto/editar_producto.html'
+    context_object_name = 'obj'
+    form_class = ProductoForm
+    success_url = reverse_lazy('producto:listadoproducto')
+
+
+
+class EliminarProducto(generic.DeleteView):
+    model = Producto
+    template_name = 'producto/eliminar_producto.html'
+    success_url = reverse_lazy('producto:listadoproducto')
+
+
    
 
 """
