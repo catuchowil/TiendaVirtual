@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 """
 
 Vistas Basadas en Función
@@ -18,9 +20,11 @@ def Acercade(request):
 
 # Vistas basadas en clase
 
-class Home(generic.TemplateView):
+class Home(LoginRequiredMixin,generic.TemplateView):
     template_name = 'base/home.html'
+    login_url = 'base:login'
 
 
-class Acercade(generic.TemplateView):
+class Acercade(LoginRequiredMixin,generic.TemplateView):
     template_name = 'base/acercade.html'
+    login_url = 'base:login'
