@@ -48,7 +48,7 @@
                             <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="{% static 'base_sistema/assets/images/users/user-1.jpg'%}" alt="user-image" class="rounded-circle">
                                 <span class="pro-user-name ms-1">
-                                    Usuario Conectado <i class="mdi mdi-chevron-down"></i> 
+                                    {{user.username}} <i class="mdi mdi-chevron-down"></i> 
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -67,7 +67,7 @@
                                 <div class="dropdown-divider"></div>
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="{% url 'base:login'%}" class="dropdown-item notify-item">
                                     <i class="fe-log-out"></i>
                                     <span>Salir del Sistema</span>
                                 </a>
@@ -237,12 +237,12 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fe-gift me-1"></i> Web Tienda <div class="arrow-down"></div>
+                                        <i class="fe-loader me-1"></i> Registrar Usuarios <div class="arrow-down"></div>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="topnav-apps">
             
                                         <a href="#" class="dropdown-item"><i class="fe-globe me-1"></i>
-                                           Tienda Virtual</a>
+                                           Registrar</a>
                                         
                                     </div>
                                 </li>

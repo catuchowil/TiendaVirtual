@@ -4,35 +4,41 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 from .models import Producto
 from .forms import ProductoForm
 
 # Vistas Basadas en Clase
 
-class NuevoProducto(generic.CreateView):
+class NuevoProducto(LoginRequiredMixin,generic.CreateView):
     model = Producto
     template_name = 'producto/nuevo_producto.html'
     form_class = ProductoForm
     contex_object_name = 'form'
     success_url = reverse_lazy('producto:listadoproducto')
+    login_url = 'base:login'
 
 
-class ListadoProducto(generic.ListView):
+class ListadoProducto(LoginRequiredMixin,generic.ListView):
     model = Producto
     template_name = 'producto/listado_producto.html'
     context_object_name = 'produ'
+    login_url = 'base:login'
 
 
-class DetalleProducto(generic.DetailView):
+class DetalleProducto(LoginRequiredMixin,generic.DetailView):
     model = Producto
     template_name = 'producto/detalle_producto.html'
     context_object_name = 'produ'
+    login_url = 'base:login'
 
 
-class BuscarProducto(generic.ListView):
+class BuscarProducto(LoginRequiredMixin,generic.ListView):
     template_name = 'producto/buscar_producto.html'
     context_object_name = 'produ'
+    login_url = 'base:login'
     
     def get_queryset(self):
         palabra_clave = self.request.GET.get("kword")
@@ -42,19 +48,21 @@ class BuscarProducto(generic.ListView):
 
 
 
-class EditarProducto(generic.UpdateView):
+class EditarProducto(LoginRequiredMixin,generic.UpdateView):
     model = Producto
     template_name = 'producto/editar_producto.html'
     context_object_name = 'obj'
     form_class = ProductoForm
     success_url = reverse_lazy('producto:listadoproducto')
+    login_url = 'base:login'
 
 
 
-class EliminarProducto(generic.DeleteView):
+class EliminarProducto(LoginRequiredMixin,generic.DeleteView):
     model = Producto
     template_name = 'producto/eliminar_producto.html'
     success_url = reverse_lazy('producto:listadoproducto')
+    login_url = 'base:login'
 
 
    
