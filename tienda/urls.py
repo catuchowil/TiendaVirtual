@@ -22,5 +22,6 @@ urlpatterns = [
     path('producto/',include(('app.producto.urls','producto'),namespace='producto')),
     path('cliente/',include(('app.cliente.urls','cliente'),namespace='cliente')),
     path('vendedor/',include(('app.vendedor.urls','vendedor'),namespace='vendedor')),
-    path('proveedor/',include(('app.proveedor.urls','proveedor'),namespace='proveedor'))
+    path('proveedor/',include(('app.proveedor.urls','proveedor'),namespace='proveedor')),
+    path('usuario/',include(('app.usuario.urls','usuario'),namespace='usuario'))
 ]

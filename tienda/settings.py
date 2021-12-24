@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'app.cliente',
     'app.vendedor',
     'app.proveedor',
+    'app.usuario',
     #--Aplicaciones de terceros
     'widget_tweaks'
 ]
