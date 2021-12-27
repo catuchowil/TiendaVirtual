@@ -1,0 +1,74 @@
+{% extends 'base/base.html' %}
+{% load widget_tweaks %}
+
+{%block titulo-miga%}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Formulario de Registro</h4>
+            <div>
+
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="{% url 'base:index' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Nuevo Usuario</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block contenido %}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Nuevo Usuarios</h4>
+                <hr>
+               
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="inputEmail4" class="form-label">Apellido</label>
+                            {% render_field form.last_name class="form-control" %}
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputPassword4" class="form-label">Nombre</label>
+                            {% render_field form.first_name class="form-control" %}
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputCity" class="form-label">Email</label>
+                            {% render_field form.email class="form-control" %}
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="inputCity" class="form-label">Nombre de Usuario</label>
+                            {% render_field form.username class="form-control" %}
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputState" class="form-label">Contraseña</label>
+                            {% render_field form.password1 class="form-control" %}
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="inputZip" class="form-label">Confirmar Contraseña</label>
+                            {% render_field form.password2 class="form-control" %}
+                        </div>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Cargar Registro</button>
+
+                </form>
+
+            </div> 
+    </div> 
+</div>
+</div>
+{% endblock %}
