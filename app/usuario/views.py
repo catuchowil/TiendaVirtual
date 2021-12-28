@@ -15,5 +15,15 @@ class RegistroUsuario(LoginRequiredMixin,generic.CreateView):
     template_name = 'usuario/nuevo_usuario.html'
     context_object_name = 'form'
     form_class = RegistroForm
-    success_url = reverse_lazy('cliente:listadocliente')
+    success_url = reverse_lazy('base:index')
+    login_url = 'base:login'
+
+
+
+class EditarUsuario(LoginRequiredMixin,generic.UpdateView):
+    model = User
+    template_name = 'usuario/editar_usuario.html'
+    context_object_name = 'form'
+    form_class = RegistroForm
+    success_url = reverse_lazy('base:index')
     login_url = 'base:login'
